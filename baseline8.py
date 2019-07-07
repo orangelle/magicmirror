@@ -638,7 +638,20 @@ def length(a):
 # In[90]:
 
 
-get_ipython().run_cell_magic('time', '', "df['behavior的个数'] = df3.groupby('listing_id').progress_apply(length)\n\n# df5['behavior为1的个数'] = df3.groupby('listing_id').progress_apply(lambda s: len(s[s['behavior_type']==1]))\ndf['behavior为1的个数'] = df3[df3['behavior_type']==1].groupby('listing_id').progress_apply(length)\ndf['behavior为2的个数'] = df3[df3['behavior_type']==2].groupby('listing_id').progress_apply(length)\ndf['behavior为3的个数'] = df3[df3['behavior_type']==3].groupby('listing_id').progress_apply(length)\n\n\n# df5['behavior为2的个数'] = df3.groupby('listing_id').progress_apply(lambda s: len(s[s['behavior_type']==2]))\n# df5['behavior为3的个数'] = df3.groupby('listing_id').progress_apply(lambda s: len(s[s['behavior_type']==3]))\ndf['behavior的个数'].fillna(0, inplace=True)\ndf['behavior为1的个数'].fillna(0, inplace=True)\ndf['behavior为2的个数'].fillna(0, inplace=True)                                                                 \ndf['behavior为3的个数'].fillna(0, inplace=True)")
+df['behavior的个数'] = df3.groupby('listing_id').progress_apply(length)
+
+# df5['behavior为1的个数'] = df3.groupby('listing_id').progress_apply(lambda s: len(s[s['behavior_type']==1]))
+df['behavior为1的个数'] = df3[df3['behavior_type']==1].groupby('listing_id').progress_apply(length)
+df['behavior为2的个数'] = df3[df3['behavior_type']==2].groupby('listing_id').progress_apply(length)
+df['behavior为3的个数'] = df3[df3['behavior_type']==3].groupby('listing_id').progress_apply(length)
+
+
+# df5['behavior为2的个数'] = df3.groupby('listing_id').progress_apply(lambda s: len(s[s['behavior_type']==2]))
+# df5['behavior为3的个数'] = df3.groupby('listing_id').progress_apply(lambda s: len(s[s['behavior_type']==3]))
+df['behavior的个数'].fillna(0, inplace=True)
+df['behavior为1的个数'].fillna(0, inplace=True)
+df['behavior为2的个数'].fillna(0, inplace=True)                                                                 
+df['behavior为3的个数'].fillna(0, inplace=True)
 
 
 # In[91]:
@@ -680,7 +693,15 @@ df7.shape
 # In[97]:
 
 
-get_ipython().run_cell_magic('time', '', "df['1月内behavior的个数'] = df7.groupby('listing_id').progress_apply(length)\n# df5['behavior为1的个数'] = df3.groupby('listing_id').progress_apply(lambda s: len(s[s['behavior_type']==1]))\ndf['1月内behavior为1的个数'] = df7[df7['behavior_type']==1].groupby('listing_id').progress_apply(length)                                                    \ndf['1月内behavior为2的个数'] = df7[df7['behavior_type']==2].groupby('listing_id').progress_apply(length)                                                 \ndf['1月内behavior为3的个数'] = df7[df7['behavior_type']==3].groupby('listing_id').progress_apply(length)\ndf['1月内behavior的个数'].fillna(0, inplace=True)\ndf['1月内behavior为1的个数'].fillna(0, inplace=True)\ndf['1月内behavior为2的个数'].fillna(0, inplace=True)                                                                 \ndf['1月内behavior为3的个数'].fillna(0, inplace=True)")
+df['1月内behavior的个数'] = df7.groupby('listing_id').progress_apply(length)
+# df5['behavior为1的个数'] = df3.groupby('listing_id').progress_apply(lambda s: len(s[s['behavior_type']==1]))
+df['1月内behavior为1的个数'] = df7[df7['behavior_type']==1].groupby('listing_id').progress_apply(length)                                                    
+df['1月内behavior为2的个数'] = df7[df7['behavior_type']==2].groupby('listing_id').progress_apply(length)                                                 
+df['1月内behavior为3的个数'] = df7[df7['behavior_type']==3].groupby('listing_id').progress_apply(length)
+df['1月内behavior的个数'].fillna(0, inplace=True)
+df['1月内behavior为1的个数'].fillna(0, inplace=True)
+df['1月内behavior为2的个数'].fillna(0, inplace=True)                                                                 
+df['1月内behavior为3的个数'].fillna(0, inplace=True)
 
 
 # In[98]:
